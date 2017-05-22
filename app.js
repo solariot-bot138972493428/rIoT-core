@@ -4,3 +4,5 @@ const ledger = require('./src/ledger.js');
 const peer = require('./src/peering.js');
 const power = require('./src/power.js');
 const admin = require('./src/connect.js');
+
+admin.startAdmin(3000);

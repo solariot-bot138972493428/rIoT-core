@@ -1,6 +1,5 @@
 var fs = require('fs');
 var CoinKey = require('coinkey');
-var ci = require('coininfo');
 
 function walletImport(importWallet) {
 var ck = CoinKey.fromWif(importWallet)

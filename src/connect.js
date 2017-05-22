@@ -1,4 +1,5 @@
-const http = require('http');
+var app = require('express')();
+var http = require('http').Server(app);
 const os = require('os');
 
 console.log(os.arch());
@@ -6,14 +7,12 @@ console.log(os.networkInterfaces());
 console.log(os.platform());
 console.log(os.release());
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World!\n');
+app.get('/', function(req, res){
+  res.send('Hello world!');
 });
 
-function startAdmin(port, hostname) {
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+function startAdmin(portAdmin) {
+http.listen(portAdmin, function(){
+  console.log('listening on *: ' + portAdmin);
 });
 }
