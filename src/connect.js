@@ -1,5 +1,5 @@
-var app = require('express')();
 var http = require('http').Server(app);
+var app = require('express')();
 const os = require('os');
 
 console.log(os.arch());
@@ -10,9 +10,3 @@ console.log(os.release());
 app.get('/', function(req, res){
   res.send('Hello world!');
 });
-
-function startAdmin(portAdmin) {
-http.listen(portAdmin, function(){
-  console.log('listening on *: ' + portAdmin);
-});
-}
